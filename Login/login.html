@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <title>Crear Cuenta o Loguear</title>
+    
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/custom.css">
+  </head>
+  <body>
+  
+  <div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1>Programacion cine LOGIN</h1>
+				<p>Crear y loguea una cuenta para la administracion de la programacion del cine</p>		
+			</div>
+	</div>
+	
+	<div class="row">	
+		<div class="col-sm-12 col-md-6 col-lg-6">
+		
+		<h3>Crea una cuenta</h3><hr />
+		
+		<form method="post" action="create-account.php" method="POST">
+			<div class="form-group">				
+				<input type="text" class="form-control" name="name" placeholder="Ingresa tu nombre" required>			
+		  </div>
+		  
+		  <div class="form-group">				
+				<input type="text" class="form-control" name="email" aria-describedby="emailHelp" placeholder="ingresa un Usuario" required>
+			</div>
+		  
+		  <div class="form-group">				
+				<input type="password" class="form-control" name="password" placeholder="Crea una contraseña" required>
+			</div>
+		  
+		  <button type="submit" class="btn btn-success btn-block">Crear Cuenta</button>
+		</form>		
+		</div>		
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<h3>Login</h3><hr />
+			<p>Ya tienes cuenta? <a href="index.html" title="Login Here">Ingresa aca</a></p>
+		</div>
+	</div>
+</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="css/bootstrap/jquery/jquery-3.4.1.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="css/bootstrap/js/bootstrap.min.js"></script>
+ 
+	</body>
+</html>

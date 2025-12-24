@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Programacion Cine</title>
+	
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/custom.css">
+  </head>
+
+  <body>
+  	
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">		
+					<div class="card">
+						<div class="loginBox">
+							<img src="images/php-mysql-logo.png" class="img-responsive" alt="PHP MySQL logos">
+							<h2>Login</h2>
+
+							<form action="check-login.php" method="post">                           	
+								<div class="form-group">									
+									<input type="text" class="form-control input-lg" name="email" placeholder="Email" required>        
+								</div>							
+								<div class="form-group">        
+									<input type="password" class="form-control input-lg" name="password" placeholder="Password" required>       
+								</div>								    
+									<button type="submit" class="btn btn-success btn-block">Login</button>
+							</form>
+							<!-- Collapse a form when user click Lost your password? link-->
+							<p><a href="#showForm" data-toggle="collapse" aria-expanded="false" aria-controls="collapse">Lost your password?</a></p>	
+							<div class="collapse" id="showForm">
+								<div class='well'>
+									<form action="password-recovery.php" method="post">
+										<div class="form-group">										
+											<input type="email" class="form-control" name="email" placeholder="Enter the email associated with the password." required>
+										</div>
+										<button type="submit" class="btn btn-dark">Recover Password</button>
+									</form>								
+								</div>
+							</div>
+													
+							<hr><p>Nuevo Usuario? <a href="login.html" title="Create an account">Crear Cuenta</a>.</p>								
+						</div><!-- /.loginBox -->	
+					</div><!-- /.card -->
+				</div><!-- /.col -->
+			</div><!--/.row-->
+		</div><!-- /.container -->
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="css/bootstrap/jquery/jquery-3.4.1.js" ></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="css/bootstrap/js/bootstrap.min.js"></script>
+	</body>
+</html>	

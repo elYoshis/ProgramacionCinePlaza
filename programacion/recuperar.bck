@@ -1,0 +1,757 @@
+$('#btnrecupera').click(function(){
+	var fi = $('#fi').val();
+	var ff = $('#ff').val();
+		$.ajax({
+			type:'POST',
+			url: 'cargarpelicula.php',
+			data:{fi:fi, ff:ff},
+			success:function(res){
+				
+				 $('.gato').html(res).fadeIn();
+				 console.log(res);
+				$.ajax({
+			type:'POST',
+			url: 'datosala1.php',
+			data:{fi:fi, ff:ff},
+			success:function(res){
+
+				var obj = JSON.parse(res);
+				console.log(res);
+				if(obj[0]['nombre']!="seleccione..."){
+					$('#s1 option:selected').text(obj[0]['nombre']+" "+obj[0]['formato']);
+				}else{
+					$('#s1 option:selected').text(obj[0]['nombre']);
+					
+				}
+				// NOTA : COPIAR EL IF A CADA SELECT
+				$('#ini1').val(obj[0]['hora']);
+				$('#fin1').val(obj[0]['horafin']);
+				$('#s1 option:selected').val(obj[0]['IDPeli']);
+				$('#res1').val(obj[0]['duracion']);
+				$('#aux1').val(obj[0]['IDProg']);
+				$('#tep1').val(obj[0]['tep']);
+				//----------------------------------------------
+				if(obj[1]['nombre']!="seleccione..."){
+					$('#s4 option:selected').text(obj[1]['nombre']+" "+obj[1]['formato']);
+				}else{
+					$('#s4 option:selected').text(obj[1]['nombre']);
+					
+				}
+				$('#ini4').val(obj[1]['hora']);
+				$('#fin4').val(obj[1]['horafin']);
+				$('#s4 option:selected').val(obj[1]['IDPeli']);
+				$('#res4').val(obj[1]['duracion']);
+				$('#aux4').val(obj[1]['IDProg']);
+				$('#tep4').val(obj[1]['tep']);
+				//----------------------------------------------
+				if(obj[2]['nombre']!="seleccione..."){
+					$('#s7 option:selected').text(obj[2]['nombre']+" "+obj[2]['formato']);
+				}else{
+					$('#s7 option:selected').text(obj[2]['nombre']);
+				}
+				$('#ini7').val(obj[2]['hora']);
+				$('#fin7').val(obj[2]['horafin']);
+				$('#s7 option:selected').val(obj[2]['IDPeli']);
+				$('#res7').val(obj[2]['duracion']);
+				$('#aux7').val(obj[2]['IDProg']);
+				$('#tep7').val(obj[2]['tep']);
+				//----------------------------------------------
+				if(obj[3]['nombre']!="seleccione..."){
+					$('#s10 option:selected').text(obj[3]['nombre']+" "+obj[3]['formato']);
+				}else{
+					$('#s10 option:selected').text(obj[3]['nombre']);
+				}
+				$('#ini10').val(obj[3]['hora']);
+				$('#fin10').val(obj[3]['horafin']);
+				$('#s10 option:selected').val(obj[3]['IDPeli']);
+				$('#res10').val(obj[3]['duracion']);
+				$('#aux10').val(obj[3]['IDProg']);
+				$('#tep10').val(obj[3]['tep']);
+				//----------------------------------------------
+				if(obj[4]['nombre']!="seleccione..."){
+					$('#s13 option:selected').text(obj[4]['nombre']+" "+obj[4]['formato']);
+				}else{
+					$('#s13 option:selected').text(obj[4]['nombre']);
+				}
+				$('#ini13').val(obj[4]['hora']);
+				$('#fin13').val(obj[4]['horafin']);
+				$('#s13 option:selected').val(obj[4]['IDPeli']);
+				$('#res13').val(obj[4]['duracion']);
+				$('#aux13').val(obj[4]['IDProg']);
+				$('#tep13').val(obj[4]['tep']);
+				//----------------------------------------------
+				if(obj[5]['nombre']!="seleccione..."){
+					$('#s16 option:selected').text(obj[5]['nombre']+" "+obj[5]['formato']);
+				}else{
+					$('#s16 option:selected').text(obj[5]['nombre']);
+				}
+				$('#ini16').val(obj[5]['hora']);
+				$('#fin16').val(obj[5]['horafin']);
+				$('#s16 option:selected').val(obj[5]['IDPeli']);
+				$('#res16').val(obj[5]['duracion']);
+				$('#aux16').val(obj[5]['IDProg']);
+				$('#tep16').val(obj[5]['tep']);
+				//----------------------------------------------
+				if(obj[6]['nombre']!="seleccione..."){
+					$('#s19 option:selected').text(obj[6]['nombre']+" "+obj[6]['formato']);
+				}else{
+					$('#s19 option:selected').text(obj[6]['nombre']);
+				}
+				$('#ini19').val(obj[6]['hora']);
+				$('#fin19').val(obj[6]['horafin']);
+				$('#s19 option:selected').val(obj[6]['IDPeli']);
+				$('#res19').val(obj[6]['duracion']);
+				$('#aux19').val(obj[6]['IDProg']);
+				$('#tep19').val(obj[6]['tep']);
+				//----------------------------------------------
+				if(obj[7]['nombre']!="seleccione..."){
+					$('#s22 option:selected').text(obj[7]['nombre']+" "+obj[7]['formato']);
+				}else{
+					$('#s22 option:selected').text(obj[7]['nombre']);
+				}
+				$('#ini22').val(obj[7]['hora']);
+				$('#fin22').val(obj[7]['horafin']);
+				$('#s22 option:selected').val(obj[7]['IDPeli']);
+				$('#res22').val(obj[7]['duracion']);
+				$('#aux22').val(obj[7]['IDProg']);
+				$('#tep22').val(obj[7]['tep']);
+				//----------------------------------------------
+				if(obj[8]['nombre']!="seleccione..."){
+					$('#s25 option:selected').text(obj[8]['nombre']+" "+obj[8]['formato']);
+				}else{
+					$('#s25 option:selected').text(obj[8]['nombre']);
+				}
+				$('#ini25').val(obj[8]['hora']);
+				$('#fin25').val(obj[8]['horafin']);
+				$('#s25 option:selected').val(obj[8]['IDPeli']);
+				$('#res25').val(obj[8]['duracion']);
+				$('#aux25').val(obj[8]['IDProg']);
+				$('#tep25').val(obj[8]['tep']);
+				//----------------------------------------------
+				if(obj[9]['nombre']!="seleccione..."){
+					$('#s28 option:selected').text(obj[9]['nombre']+" "+obj[9]['formato']);
+				}else{
+					$('#s28 option:selected').text(obj[9]['nombre']);
+				}
+				$('#ini28').val(obj[9]['hora']);
+				$('#fin28').val(obj[9]['horafin']);
+				$('#s28 option:selected').val(obj[9]['IDPeli']);
+				$('#res28').val(obj[9]['duracion']);
+				$('#aux28').val(obj[9]['IDProg']);
+				$('#tep28').val(obj[9]['tep']);
+				//----------------------------------------------
+				console.log(obj);
+				$.ajax({
+				type:'POST',
+				url: 'datosala2.php',
+				data:{fi:fi, ff:ff},
+				success:function(resp){
+				var obj = JSON.parse(resp);
+				if(obj[0]['nombre']!="seleccione..."){
+					$('#s2 option:selected').text(obj[0]['nombre']+" "+obj[0]['formato']);
+				}else{
+					$('#s2 option:selected').text(obj[0]['nombre']);
+				}
+				$('#ini2').val(obj[0]['hora']);
+				$('#fin2').val(obj[0]['horafin']);
+				$('#s2 option:selected').val(obj[0]['IDPeli']);
+				$('#res2').val(obj[0]['duracion']);
+				$('#aux2').val(obj[0]['IDProg']);
+				$('#tep2').val(obj[0]['tep']);
+				//----------------------------------------------
+				if(obj[1]['nombre']!="seleccione..."){
+					$('#s5 option:selected').text(obj[1]['nombre']+" "+obj[1]['formato']);
+				}else{
+					$('#s5 option:selected').text(obj[1]['nombre']);
+				}
+				$('#ini5').val(obj[1]['hora']);
+				$('#fin5').val(obj[1]['horafin']);
+				$('#s5 option:selected').val(obj[1]['IDPeli']);
+				$('#res5').val(obj[1]['duracion']);
+				$('#aux5').val(obj[1]['IDProg']);
+				$('#tep5').val(obj[1]['tep']);
+				//----------------------------------------------
+				if(obj[2]['nombre']!="seleccione..."){
+					$('#s8 option:selected').text(obj[2]['nombre']+" "+obj[2]['formato']);
+				}else{
+					$('#s8 option:selected').text(obj[2]['nombre']);
+				}
+				$('#ini8').val(obj[2]['hora']);
+				$('#fin8').val(obj[2]['horafin']);
+				$('#s8 option:selected').val(obj[2]['IDPeli']);
+				$('#res8').val(obj[2]['duracion']);
+				$('#aux8').val(obj[2]['IDProg']);
+				$('#tep8').val(obj[2]['tep']);
+				//----------------------------------------------
+				if(obj[3]['nombre']!="seleccione..."){
+					$('#s11 option:selected').text(obj[3]['nombre']+" "+obj[3]['formato']);
+				}else{
+					$('#s11 option:selected').text(obj[3]['nombre']);
+				}
+				$('#ini11').val(obj[3]['hora']);
+				$('#fin11').val(obj[3]['horafin']);
+				$('#s11 option:selected').val(obj[3]['IDPeli']);
+				$('#res11').val(obj[3]['duracion']);
+				$('#aux11').val(obj[3]['IDProg']);
+				$('#tep11').val(obj[3]['tep']);
+				//----------------------------------------------
+				if(obj[4]['nombre']!="seleccione..."){
+					$('#s14 option:selected').text(obj[4]['nombre']+" "+obj[4]['formato']);
+				}else{
+					$('#s14 option:selected').text(obj[4]['nombre']);
+				}
+
+				$('#ini14').val(obj[4]['hora']);
+				$('#fin14').val(obj[4]['horafin']);
+				$('#s14 option:selected').val(obj[4]['IDPeli']);
+				$('#res14').val(obj[4]['duracion']);
+				$('#aux14').val(obj[4]['IDProg']);
+				$('#tep14').val(obj[4]['tep']);
+				//----------------------------------------------
+				if(obj[5]['nombre']!="seleccione..."){
+					$('#s17 option:selected').text(obj[5]['nombre']+" "+obj[5]['formato']);
+				}else{
+					$('#s17 option:selected').text(obj[5]['nombre']);
+				}
+				$('#ini17').val(obj[5]['hora']);
+				$('#fin17').val(obj[5]['horafin']);
+				$('#s17 option:selected').val(obj[5]['IDPeli']);
+				$('#res17').val(obj[5]['duracion']);
+				$('#aux17').val(obj[5]['IDProg']);
+				$('#tep17').val(obj[5]['tep']);
+				//----------------------------------------------
+				if(obj[6]['nombre']!="seleccione..."){
+					$('#s20 option:selected').text(obj[6]['nombre']+" "+obj[6]['formato']);
+				}else{
+					$('#s20 option:selected').text(obj[6]['nombre']);
+				}
+				$('#ini20').val(obj[6]['hora']);
+				$('#fin20').val(obj[6]['horafin']);
+				$('#s20 option:selected').val(obj[6]['IDPeli']);
+				$('#res20').val(obj[6]['duracion']);
+				$('#aux20').val(obj[6]['IDProg']);
+				$('#tep20').val(obj[6]['tep']);
+				//----------------------------------------------
+				if(obj[7]['nombre']!="seleccione..."){
+					$('#s23 option:selected').text(obj[7]['nombre']+" "+obj[7]['formato']);
+				}else{
+					$('#s23 option:selected').text(obj[7]['nombre']);
+				}
+				$('#ini23').val(obj[7]['hora']);
+				$('#fin23').val(obj[7]['horafin']);
+				$('#s23 option:selected').val(obj[7]['IDPeli']);
+				$('#res23').val(obj[7]['duracion']);
+				$('#aux23').val(obj[7]['IDProg']);
+				$('#tep23').val(obj[7]['tep']);
+				//----------------------------------------------
+				if(obj[8]['nombre']!="seleccione..."){
+					$('#s26 option:selected').text(obj[8]['nombre']+" "+obj[8]['formato']);
+				}else{
+					$('#s26 option:selected').text(obj[8]['nombre']);
+				}
+				$('#ini26').val(obj[8]['hora']);
+				$('#fin26').val(obj[8]['horafin']);
+				$('#s26 option:selected').val(obj[8]['IDPeli']);
+				$('#res26').val(obj[8]['duracion']);
+				$('#aux26').val(obj[8]['IDProg']);
+				$('#tep26').val(obj[8]['tep']);
+				//----------------------------------------------
+				if(obj[9]['nombre']!="seleccione..."){
+					$('#s27 option:selected').text(obj[9]['nombre']+" "+obj[9]['formato']);
+				}else{
+					$('#s27 option:selected').text(obj[9]['nombre']);
+				}
+				$('#ini29').val(obj[9]['hora']);
+				$('#fin29').val(obj[9]['horafin']);
+				$('#s29 option:selected').val(obj[9]['IDPeli']);
+				$('#res29').val(obj[9]['duracion']);
+				$('#aux29').val(obj[9]['IDProg']);
+				$('#tep29').val(obj[9]['tep']);
+				//----------------------------------------------
+				console.log(obj);
+				$.ajax({
+				type:'POST',
+				url: 'datosala3.php',
+				data:{fi:fi, ff:ff},
+				success:function(resp){
+				var obj = JSON.parse(resp);
+				if(obj[0]['nombre']!="seleccione..."){
+					$('#s3 option:selected').text(obj[0]['nombre']+" "+obj[0]['formato']);
+				}else{
+					$('#s3 option:selected').text(obj[0]['nombre']);
+				}
+				$('#ini3').val(obj[0]['hora']);
+				$('#fin3').val(obj[0]['horafin']);
+				$('#s3 option:selected').val(obj[0]['IDPeli']);
+				$('#res3').val(obj[0]['duracion']);
+				$('#aux3').val(obj[0]['IDProg']);
+				$('#tep3').val(obj[0]['tep']);
+				//----------------------------------------------
+				if(obj[1]['nombre']!="seleccione..."){
+					$('#s6 option:selected').text(obj[1]['nombre']+" "+obj[1]['formato']);
+				}else{
+					$('#s6 option:selected').text(obj[1]['nombre']);
+				}
+				$('#ini6').val(obj[1]['hora']);
+				$('#fin6').val(obj[1]['horafin']);
+				$('#s6 option:selected').val(obj[1]['IDPeli']);
+				$('#res6').val(obj[1]['duracion']);
+				$('#aux6').val(obj[1]['IDProg']);
+				$('#tep6').val(obj[1]['tep']);
+				//----------------------------------------------
+				if(obj[2]['nombre']!="seleccione..."){
+					$('#s9 option:selected').text(obj[2]['nombre']+" "+obj[2]['formato']);
+				}else{
+					$('#s9 option:selected').text(obj[2]['nombre']);
+				}
+				$('#ini9').val(obj[2]['hora']);
+				$('#fin9').val(obj[2]['horafin']);
+				$('#s9 option:selected').val(obj[2]['IDPeli']);
+				$('#res9').val(obj[2]['duracion']);
+				$('#aux9').val(obj[2]['IDProg']);
+				$('#tep9').val(obj[2]['tep']);
+				//----------------------------------------------
+				if(obj[3]['nombre']!="seleccione..."){
+					$('#s12 option:selected').text(obj[3]['nombre']+" "+obj[3]['formato']);
+				}else{
+					$('#s12 option:selected').text(obj[3]['nombre']);
+				}
+				$('#ini12').val(obj[3]['hora']);
+				$('#fin12').val(obj[3]['horafin']);
+				$('#s12 option:selected').val(obj[3]['IDPeli']);
+				$('#res12').val(obj[3]['duracion']);
+				$('#aux12').val(obj[3]['IDProg']);
+				$('#tep12').val(obj[3]['tep']);
+				//----------------------------------------------
+				if(obj[4]['nombre']!="seleccione..."){
+					$('#s15 option:selected').text(obj[4]['nombre']+" "+obj[4]['formato']);
+				}else{
+					$('#s15 option:selected').text(obj[4]['nombre']);
+				}
+				$('#ini15').val(obj[4]['hora']);
+				$('#fin15').val(obj[4]['horafin']);
+				$('#s15 option:selected').val(obj[4]['IDPeli']);
+				$('#res15').val(obj[4]['duracion']);
+				$('#aux15').val(obj[4]['IDProg']);
+				$('#tep15').val(obj[4]['tep']);
+				//----------------------------------------------
+				if(obj[5]['nombre']!="seleccione..."){
+					$('#s18 option:selected').text(obj[5]['nombre']+" "+obj[5]['formato']);
+				}else{
+					$('#s18 option:selected').text(obj[5]['nombre']);
+				}
+				$('#ini18').val(obj[5]['hora']);
+				$('#fin18').val(obj[5]['horafin']);
+				$('#s18 option:selected').val(obj[5]['IDPeli']);
+				$('#res18').val(obj[5]['duracion']);
+				$('#aux18').val(obj[5]['IDProg']);
+				$('#tep18').val(obj[5]['tep']);
+				//----------------------------------------------
+				if(obj[6]['nombre']!="seleccione..."){
+					$('#s21 option:selected').text(obj[6]['nombre']+" "+obj[6]['formato']);
+				}else{
+					$('#s21 option:selected').text(obj[6]['nombre']);
+				}
+				$('#ini21').val(obj[6]['hora']);
+				$('#fin21').val(obj[6]['horafin']);
+				$('#s21 option:selected').val(obj[6]['IDPeli']);
+				$('#res21').val(obj[6]['duracion']);
+				$('#aux21').val(obj[6]['IDProg']);
+				$('#tep21').val(obj[6]['tep']);
+				//----------------------------------------------
+				if(obj[7]['nombre']!="seleccione..."){
+					$('#s24 option:selected').text(obj[7]['nombre']+" "+obj[7]['formato']);
+				}else{
+					$('#s24 option:selected').text(obj[7]['nombre']);
+				}
+				$('#ini24').val(obj[7]['hora']);
+				$('#fin24').val(obj[7]['horafin']);
+				$('#s24 option:selected').val(obj[7]['IDPeli']);
+				$('#res24').val(obj[7]['duracion']);
+				$('#aux24').val(obj[7]['IDProg']);
+				$('#tep24').val(obj[7]['tep']);
+				//----------------------------------------------
+				if(obj[8]['nombre']!="seleccione..."){
+					$('#s27 option:selected').text(obj[8]['nombre']+" "+obj[8]['formato']);
+				}else{
+					$('#s27 option:selected').text(obj[8]['nombre']);
+				}
+				$('#ini27').val(obj[8]['hora']);
+				$('#fin27').val(obj[8]['horafin']);
+				$('#s27 option:selected').val(obj[8]['IDPeli']);
+				$('#res27').val(obj[8]['duracion']);
+				$('#aux27').val(obj[8]['IDProg']);
+				$('#tep27').val(obj[8]['tep']);
+				//----------------------------------------------
+				if(obj[9]['nombre']!="seleccione..."){
+					$('#s30 option:selected').text(obj[9]['nombre']+" "+obj[9]['formato']);
+				}else{
+					$('#s30 option:selected').text(obj[9]['nombre']);
+				}
+				$('#ini30').val(obj[9]['hora']);
+				$('#fin30').val(obj[9]['horafin']);
+				$('#s30 option:selected').val(obj[9]['IDPeli']);
+				$('#res30').val(obj[9]['duracion']);
+				$('#aux30').val(obj[9]['IDProg']);
+				$('#tep30').val(obj[9]['tep']);
+				//----------------------------------------------
+				console.log(obj);
+				$.ajax({
+				type:'POST',
+				url: 'datostabla.php',
+				data:{fi:fi, ff:ff},
+				success:function(resp){
+				var obj = JSON.parse(resp);
+				if(obj[0]['nombre']!="seleccione..."){
+					$('#info1 option:selected').text(obj[0]['nombre']+" "+obj[0]['formato']);
+				}else{
+					$('#info1 option:selected').text(obj[0]['nombre']);
+					$('#nro1').val("");
+					$('#cla1').val("");
+					$('#ti1').val("");
+					$('#pre1').val("");
+				}
+				$('#info1').val(obj[0]['IDPeli']);
+				$('#ti1').val(obj[0]['duracion']);
+				if (obj[0]['clasificacion'] == "APTO PARA TODO PUBLICO") {
+					$('#cla1').val("TP");
+				}
+				if (obj[0]['clasificacion'] == "MAYORES DE 12 AÑOS") {
+					$('#cla1').val(">12");
+				}
+				if (obj[0]['clasificacion'] == "MAYORES DE 13 AÑOS") {
+					$('#cla1').val(">13");
+				}
+				if (obj[0]['clasificacion'] == "MAYORES DE 14 AÑOS") {
+					$('#cla1').val(">14");
+				}
+				if (obj[0]['clasificacion'] == "MAYORES DE 15 AÑOS") {
+					$('#cla1').val(">15");
+				}
+				if (obj[0]['clasificacion'] == "MAYORES DE 18 AÑOS") {
+					$('#cla1').val(">18");
+				}
+				if (obj[0]['clasificacion'] == "MAYORES DE 21 AÑOS") {
+					$('#cla1').val(">21");
+				}
+				
+				$('#nro1').val(obj[0]['nrosemana']);
+				if(obj[1]['nombre']!="seleccione..."){
+					$('#info2 option:selected').text(obj[1]['nombre']+" "+obj[1]['formato']);
+				}else{
+					$('#info2 option:selected').text(obj[1]['nombre']);
+					$('#nro2').val("");
+					$('#cla2').val("");
+					$('#ti2').val("");
+					$('#pre2').val("");
+				}
+				$('#info2').val(obj[1]['IDPeli']);
+				$('#ti2').val(obj[1]['duracion']);
+				if (obj[1]['clasificacion'] == "APTO PARA TODO PUBLICO") {
+					$('#cla2').val("TP");
+				}
+				if (obj[1]['clasificacion'] == "MAYORES DE 12 AÑOS") {
+					$('#cla2').val(">12");
+				}
+				if (obj[1]['clasificacion'] == "MAYORES DE 13 AÑOS") {
+					$('#cla2').val(">13");
+				}
+				if (obj[1]['clasificacion'] == "MAYORES DE 14 AÑOS") {
+					$('#cla2').val(">14");
+				}
+				if (obj[1]['clasificacion'] == "MAYORES DE 15 AÑOS") {
+					$('#cla2').val(">15");
+				}
+				if (obj[1]['clasificacion'] == "MAYORES DE 18 AÑOS") {
+					$('#cla2').val(">18");
+				}
+				if (obj[1]['clasificacion'] == "MAYORES DE 21 AÑOS") {
+					$('#cla2').val(">21");
+				}
+				$('#nro2').val(obj[1]['nrosemana']);
+				if(obj[2]['nombre']!="seleccione..."){
+					$('#info3 option:selected').text(obj[2]['nombre']+" "+obj[2]['formato']);
+				}else{
+					$('#info3 option:selected').text(obj[2]['nombre']);
+					$('#nro3').val("");
+					$('#cla3').val("");
+					$('#ti3').val("");
+					$('#pre3').val("");
+				}
+				$('#info3').val(obj[2]['IDPeli']);
+				$('#ti3').val(obj[2]['duracion']);
+				if (obj[2]['clasificacion'] == "APTO PARA TODO PUBLICO") {
+					$('#cla3').val("TP");
+				}
+				if (obj[2]['clasificacion'] == "MAYORES DE 12 AÑOS") {
+					$('#cla3').val(">12");
+				}
+				if (obj[2]['clasificacion'] == "MAYORES DE 13 AÑOS") {
+					$('#cla3').val(">13");
+				}
+				if (obj[2]['clasificacion'] == "MAYORES DE 14 AÑOS") {
+					$('#cla3').val(">14");
+				}
+				if (obj[2]['clasificacion'] == "MAYORES DE 15 AÑOS") {
+					$('#cla3').val(">15");
+				}
+				if (obj[2]['clasificacion'] == "MAYORES DE 18 AÑOS") {
+					$('#cla3').val(">18");
+				}
+				if (obj[2]['clasificacion'] == "MAYORES DE 21 AÑOS") {
+					$('#cla3').val(">21");
+				}
+				$('#nro3').val(obj[2]['nrosemana']);
+				if(obj[3]['nombre']!="seleccione..."){
+					$('#info4 option:selected').text(obj[3]['nombre']+" "+obj[3]['formato']);
+				}else{
+					$('#info4 option:selected').text(obj[3]['nombre']);
+					$('#nro4').val("");
+					$('#cla4').val("");
+					$('#ti4').val("");
+					$('#pre4').val("");
+				}
+				$('#info4').val(obj[3]['IDPeli']);
+				$('#ti4').val(obj[3]['duracion']);
+				if (obj[3]['clasificacion'] == "APTO PARA TODO PUBLICO") {
+					$('#cla4').val("TP");
+				}
+				if (obj[3]['clasificacion'] == "MAYORES DE 12 AÑOS") {
+					$('#cla4').val(">12");
+				}
+				if (obj[3]['clasificacion'] == "MAYORES DE 13 AÑOS") {
+					$('#cla4').val(">13");
+				}
+				if (obj[3]['clasificacion'] == "MAYORES DE 14 AÑOS") {
+					$('#cla4').val(">14");
+				}
+				if (obj[3]['clasificacion'] == "MAYORES DE 14 AÑOS") {
+					$('#cla4').val(">14");
+				}
+				if (obj[3]['clasificacion'] == "MAYORES DE 18 AÑOS") {
+					$('#cla4').val(">18");
+				}
+				if (obj[3]['clasificacion'] == "MAYORES DE 21 AÑOS") {
+					$('#cla4').val(">21");
+				}
+				$('#nro4').val(obj[3]['nrosemana']);
+				
+				if(obj[4]['nombre']!="seleccione..."){
+					$('#info5 option:selected').text(obj[4]['nombre']+" "+obj[4]['formato']);
+				}else{
+					$('#info5 option:selected').text(obj[4]['nombre']);
+					$('#nro5').val("");
+					$('#cla5').val("");
+					$('#ti5').val("");
+					$('#pre5').val("");
+				}
+				$('#info5').val(obj[4]['IDPeli']);
+				$('#ti5').val(obj[4]['duracion']);
+				if (obj[4]['clasificacion'] == "APTO PARA TODO PUBLICO") {
+					$('#cla5').val("TP");
+				}
+				if (obj[4]['clasificacion'] == "MAYORES DE 12 AÑOS") {
+					$('#cla5').val(">12");
+				}
+				if (obj[4]['clasificacion'] == "MAYORES DE 13 AÑOS") {
+					$('#cla5').val(">13");
+				}
+				if (obj[4]['clasificacion'] == "MAYORES DE 14 AÑOS") {
+					$('#cla5').val(">14");
+				}
+				if (obj[4]['clasificacion'] == "MAYORES DE 14 AÑOS") {
+					$('#cla5').val(">14");
+				}
+				if (obj[4]['clasificacion'] == "MAYORES DE 18 AÑOS") {
+					$('#cla5').val(">18");
+				}
+				if (obj[4]['clasificacion'] == "MAYORES DE 21 AÑOS") {
+					$('#cla5').val(">21");
+				}
+				$('#nro5').val(obj[4]['nrosemana']);
+
+				if(obj[5]['nombre']!="seleccione..."){
+					$('#info6 option:selected').text(obj[5]['nombre']+" "+obj[5]['formato']);
+				}else{
+					$('#info6 option:selected').text(obj[5]['nombre']);
+					$('#nro6').val("");
+					$('#cla6').val("");
+					$('#ti6').val("");
+					$('#pre6').val("");
+				}
+				$('#info6').val(obj[5]['IDPeli']);
+				$('#ti6').val(obj[5]['duracion']);
+				if (obj[5]['clasificacion'] == "APTO PARA TODO PUBLICO") {
+					$('#cla6').val("TP");
+				}
+				if (obj[5]['clasificacion'] == "MAYORES DE 12 AÑOS") {
+					$('#cla6').val(">12");
+				}
+				if (obj[5]['clasificacion'] == "MAYORES DE 13 AÑOS") {
+					$('#cla6').val(">13");
+				}
+				if (obj[5]['clasificacion'] == "MAYORES DE 14 AÑOS") {
+					$('#cla6').val(">14");
+				}
+				if (obj[5]['clasificacion'] == "MAYORES DE 14 AÑOS") {
+					$('#cla6').val(">14");
+				}
+				if (obj[5]['clasificacion'] == "MAYORES DE 18 AÑOS") {
+					$('#cla6').val(">18");
+				}
+				if (obj[5]['clasificacion'] == "MAYORES DE 21 AÑOS") {
+					$('#cla6').val(">21");
+				}
+				$('#nro6').val(obj[5]['nrosemana']);
+
+				if(obj[6]['nombre']!="seleccione..."){
+					$('#info7 option:selected').text(obj[6]['nombre']+" "+obj[6]['formato']);
+				}else{
+					$('#info7 option:selected').text(obj[6]['nombre']);
+					$('#nro7').val("");
+					$('#cla7').val("");
+					$('#ti7').val("");
+					$('#pre7').val("");
+				}
+				$('#info7').val(obj[6]['IDPeli']);
+				$('#ti7').val(obj[6]['duracion']);
+				if (obj[6]['clasificacion'] == "APTO PARA TODO PUBLICO") {
+					$('#cla7').val("TP");
+				}
+				if (obj[6]['clasificacion'] == "MAYORES DE 12 AÑOS") {
+					$('#cla7').val(">12");
+				}
+				if (obj[6]['clasificacion'] == "MAYORES DE 13 AÑOS") {
+					$('#cla7').val(">13");
+				}
+				if (obj[6]['clasificacion'] == "MAYORES DE 15 AÑOS") {
+					$('#cla7').val(">15");
+				}
+				if (obj[6]['clasificacion'] == "MAYORES DE 14 AÑOS") {
+					$('#cla7').val(">14");
+				}
+				if (obj[6]['clasificacion'] == "MAYORES DE 18 AÑOS") {
+					$('#cla7').val(">18");
+				}
+				if (obj[6]['clasificacion'] == "MAYORES DE 21 AÑOS") {
+					$('#cla7').val(">21");
+				}
+				$('#nro7').val(obj[6]['nrosemana']);
+
+				if(obj[7]['nombre']!="seleccione..."){
+					$('#info8 option:selected').text(obj[7]['nombre']+" "+obj[7]['formato']);
+				}else{
+					$('#info8 option:selected').text(obj[7]['nombre']);
+					$('#nro8').val("");
+					$('#cla8').val("");
+					$('#ti8').val("");
+					$('#pre8').val("");
+				}
+				$('#info8').val(obj[7]['IDPeli']);
+				$('#ti8').val(obj[7]['duracion']);
+				if (obj[7]['clasificacion'] == "APTO PARA TODO PUBLICO") {
+					$('#cla8').val("TP");
+				}
+				if (obj[7]['clasificacion'] == "MAYORES DE 12 AÑOS") {
+					$('#cla8').val(">12");
+				}
+				if (obj[7]['clasificacion'] == "MAYORES DE 13 AÑOS") {
+					$('#cla8').val(">13");
+				}
+				if (obj[7]['clasificacion'] == "MAYORES DE 14 AÑOS") {
+					$('#cla8').val(">14");
+				}
+				if (obj[7]['clasificacion'] == "MAYORES DE 14 AÑOS") {
+					$('#cla8').val(">14");
+				}
+				if (obj[7]['clasificacion'] == "MAYORES DE 18 AÑOS") {
+					$('#cla8').val(">18");
+				}
+				if (obj[7]['clasificacion'] == "MAYORES DE 21 AÑOS") {
+					$('#cla8').val(">21");
+				}
+				$('#nro8').val(obj[7]['nrosemana']);
+
+				if(obj[8]['nombre']!="seleccione..."){
+					$('#info9 option:selected').text(obj[8]['nombre']+" "+obj[8]['formato']);
+				}else{
+					$('#info9 option:selected').text(obj[8]['nombre']);
+					$('#nro9').val("");
+					$('#cla9').val("");
+					$('#ti9').val("");
+					$('#pre9').val("");
+				}
+				$('#info9').val(obj[8]['IDPeli']);
+				$('#ti9').val(obj[8]['duracion']);
+				if (obj[8]['clasificacion'] == "APTO PARA TODO PUBLICO") {
+					$('#cla9').val("TP");
+				}
+				if (obj[8]['clasificacion'] == "MAYORES DE 12 AÑOS") {
+					$('#cla9').val(">12");
+				}
+				if (obj[8]['clasificacion'] == "MAYORES DE 13 AÑOS") {
+					$('#cla9').val(">13");
+				}
+				if (obj[8]['clasificacion'] == "MAYORES DE 14 AÑOS") {
+					$('#cla9').val(">14");
+				}
+				if (obj[8]['clasificacion'] == "MAYORES DE 14 AÑOS") {
+					$('#cla9').val(">14");
+				}
+				if (obj[8]['clasificacion'] == "MAYORES DE 18 AÑOS") {
+					$('#cla9').val(">18");
+				}
+				if (obj[8]['clasificacion'] == "MAYORES DE 21 AÑOS") {
+					$('#cla9').val(">21");
+				}
+				$('#nro9').val(obj[8]['nrosemana']);
+
+				if(obj[9]['nombre']!="seleccione..."){
+					$('#info10 option:selected').text(obj[9]['nombre']+" "+obj[9]['formato']);
+				}else{
+					$('#info10 option:selected').text(obj[9]['nombre']);
+					$('#nro10').val("");
+					$('#cla10').val("");
+					$('#ti10').val("");
+					$('#pre10').val("");
+				}
+				$('#info10').val(obj[9]['IDPeli']);
+				$('#ti10').val(obj[9]['duracion']);
+				if (obj[9]['clasificacion'] == "APTO PARA TODO PUBLICO") {
+					$('#cla10').val("TP");
+				}
+				if (obj[9]['clasificacion'] == "MAYORES DE 12 AÑOS") {
+					$('#cla10').val(">12");
+				}
+				if (obj[9]['clasificacion'] == "MAYORES DE 13 AÑOS") {
+					$('#cla10').val(">13");
+				}
+				if (obj[9]['clasificacion'] == "MAYORES DE 14 AÑOS") {
+					$('#cla10').val(">14");
+				}
+				if (obj[9]['clasificacion'] == "MAYORES DE 14 AÑOS") {
+					$('#cla10').val(">14");
+				}
+				if (obj[9]['clasificacion'] == "MAYORES DE 18 AÑOS") {
+					$('#cla10').val(">18");
+				}
+				if (obj[9]['clasificacion'] == "MAYORES DE 21 AÑOS") {
+					$('#cla10').val(">21");
+				}
+				$('#nro10').val(obj[9]['nrosemana']);
+				//----------------------------------------------
+				
+				console.log(obj);
+			}
+		});
+			}
+		});
+			}
+		});
+			}
+		});	
+				
+			}
+		});	
+
+});

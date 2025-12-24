@@ -1,0 +1,23 @@
+<?php 
+require "../login/conn.php";
+//Fechas
+$finicio=$_POST['fi'];  
+$ffinal=$_POST['ff'];
+
+$consu= "SELECT DISTINCT p.IDPeli, p.nombre, p.duracion, p.clasificacion,p.nrosemana, p.formato FROM pelicula p, peliprogra pp, programacion prg WHERE p.IDPeli = pp.IDPeli AND pp.IDProg = prg.IDProg  AND prg.fechaInicio = '".$finicio."' AND prg.fechaFinal = '".$ffinal."' ORDER BY p.IDPeli DESC " ;
+
+$c=1;
+$datos = array();
+if ($resultado= mysqli_query($conexion,$consu)) {
+	while ($row = mysqli_fetch_assoc($resultado)) {
+		$datos[]= $row;
+
+
+		$c++;
+	}
+}
+
+echo json_encode($datos);
+
+
+?>

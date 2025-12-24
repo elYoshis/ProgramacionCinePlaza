@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Porgramacion de Peliculas
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <!-- CSS Files -->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link href="../assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
+ 
+  <link rel="stylesheet" href="../assets2/css/cs-skin-elastic.css">
+  <link rel="stylesheet" href="../assets2/css/lib/datatable/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../assets2/css/style.css">
+
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../assets/demo/demo.css" rel="stylesheet" />
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="yellow" data-active-color="success">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+      <div class="logo">
+        <a href="#" class="simple-text logo-mini">
+          <div class="logo-image-small">
+            <img src="../assets/img/logo-small.png">
+          </div>
+        </a>
+        <a href="#" class="simple-text logo-normal">
+          Peliculas
+          <!-- <div class="logo-image-big">
+            <img src="../assets/img/logo-big.png">
+          </div> -->
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+
+          <li>
+            <a href="../principal/principal.php">
+              <i class="nc-icon nc-bank"></i>
+              <p>Inicio</p>
+            </a>
+          </li>
+          <li>
+            <a href="../distroingre/distroingre.php">
+              <i class="nc-icon nc-delivery-fast"></i>
+              <p>Distribuidores</p>
+            </a>
+          </li>
+          <li class="active ">
+            <a href="./peliingre.php">
+              <i class="nc-icon nc-button-play"></i>
+              <p>Insertar Peliculas</p>
+            </a>
+          </li>
+          
+          <li>
+            <a href="../programacion/indexprog.php">
+              <i class="nc-icon nc-time-alarm"></i>
+              <p>Programacion</p>
+            </a>
+          </li>
+          <li >
+          <a href="../reportep/indexrep.php" class="nav-link">
+              <i class="menu-icon fa fa-file-text-o"></i>
+              Reporte
+            </a>
+      </li>
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand" href="#pablo">Ingreso de Peliculas</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+          <a class="nav-link btn-rotate" href="../Login/index.html">
+                  Log Out
+                  <i class="fa fa-arrow-circle-left"></i>
+                  
+                </a>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <!-- <div class="panel-header panel-header-sm">
+
+
+</div> -->
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-user">
+              <div class="card-header">
+                <h5 class="card-title">Ingresar Pelicula</h5>
+              </div>
+              <div class="card-body">
+                <form method="POST" action="insertarp.php">
+                  <div class="row">
+                    <div class="col-md-5 pr-1">
+                      <div class="form-group">
+                        <label>Titulo:</label>
+                        <input type="text" name="titulopeli" class="form-control" placeholder="Titulo de la Pelicula" value="" style="text-transform: uppercase;">
+                      </div>
+                    </div>
+                    <div class="col-md-3 px-1">
+                      <div class="form-group">
+                        <label>Duracion (minutos):</label>
+                        <input type="number" name="duracion" class="form-control" placeholder="Minutos" value="0" style="text-transform: uppercase;">
+                      </div>
+                    </div>
+                    <div class="col-md-4 pl-1">
+                      <div class="form-group">
+                        <label>Clasificacion:</label>
+                        <select class="form-control" name="clasifi" placeholder="Seleccione Clasificacion" style="text-transform: uppercase;">
+                          <option>APTO PARA TODO PUBLICO</option>
+                          <option>MAYORES DE 12 AÑOS</option>
+                          <option>MAYORES DE 13 AÑOS</option>
+                          <option>MAYORES DE 14 AÑOS</option>
+                          <option>MAYORES DE 15 AÑOS</option>
+                          <option>MAYORES DE 18 AÑOS</option>
+                          <option>MAYORES DE 21 AÑOS</option>
+                        </select>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4 pr-1">
+                      <div class="form-group">
+                        <label>Doblado/Subtitulado:</label>
+                        <select class="form-control" name="dubsub" placeholder="Seleccione">
+                          <option value="Doblado">DOBLADO</option>
+                          <option value="Subtitulado">SUBTITULADO</option>
+                        </select>
+                        
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-5 pl-1">
+                      <div class="form-group">
+                        <label>Distribuidor:</label>
+                        <select name="distro" type="text" class="form-control" placeholder="Distribuidor">
+                          <?php
+                          require "../Login/conn.php";
+                          $sele="SELECT ID,nombre FROM distribuidor ORDER BY nombre";
+                          $rep=mysqli_query($conexion,$sele);
+                          if($rep){
+                            while($ar=mysqli_fetch_array($rep)){
+                              echo"<option value='".$ar['ID']."'>".$ar['nombre']."</option>";
+
+                            }
+
+                          }
+
+                          ?>
+
+                        </select>
+
+                      </div>
+                    </div>
+
+                      <div class="col-md-1"> <label>Formato:</label><br>
+                       <p><label class="switch switch-3d switch-primary mr-3"><input type="checkbox" name="2d" class="switch-input"> <span class="switch-label"></span> <span class="switch-handle"></span>2D</label>
+                       <label class="switch switch-3d switch-primary mr-3"><input type="checkbox" name="3d" class="switch-input"  > <span class="switch-label"></span> <span class="switch-handle"></span>3D</label> </p>
+                   </div>
+                  </div>
+                
+                  <!--<div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>About Me</label>
+                        <textarea class="form-control textarea">Oh so, your weak rhyme You doubt I'll bother, reading into it</textarea>
+                      </div>
+                    </div>
+                  </div>-->
+                  <div class="row">
+                    <div class="update ml-auto mr-auto">
+                      <button type="submit" class="btn btn-primary btn-round" id="insertar"><i class="nc-icon nc-simple-add">&nbsp;&nbsp;&nbsp;</i> Insertar Pelicula</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+			<div class="row">
+		   		<div class="animated fadeIn">
+			         
+				    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Lista de Peliculas Registradas</strong>
+                            </div>
+                            <div class="card-body">
+                          
+                              <input id="res" hidden></input>
+                                <table id="bootstrap-data-table" class="table table-striped table-bordered" style="font-size: 15px; ">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th style="width: 200px">Titulo</th>
+                                            <th>Duracion (minutos)</th>
+                                            <th>Clasificacion</th>
+                                            <th>Formato</th>
+                                            <th>Dob/Sub</th>
+                                            <th>Distribuidor</th>
+                                            <th>Editar</th>
+                                            <th>Borrar</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                      <?php
+  require "../Login/conn.php";
+  
+  $mostrar="SELECT p.*, d.ID as did, d.nombre as dis FROM pelicula p,distribuidor d WHERE p.idDistro=d.ID ORDER BY p.IDPeli DESC" ;
+
+  $sq=mysqli_query($conexion,$mostrar);
+  $row=mysqli_num_rows($sq);
+  if($row>0){
+    if($sq){
+        $s=1;
+        while($ser=mysqli_fetch_array($sq)){
+          echo"<tr>
+          <td>".$s."</td>
+          <td>".$ser['nombre']."</td>
+          <td>".$ser['duracion']."</td>
+          <td>".$ser['clasificacion']."</td>
+          <td>".$ser['formato']."</td>
+          <td>".$ser['subDob']."</td>
+          <td>".$ser['dis']."</td>
+
+          <td align='center'>
+              <a href=\"javascript:edita2 ('".$ser['IDPeli']."','".$ser['nombre']."','".$ser['duracion']."','".$ser['clasificacion']."','".$ser['formato']."','".$ser['subDob']."','".$ser['dis']."')\" class='btn-sm btn-outline-primary'/><i class='fa fa-pencil-square-o'></i></td>
+
+          <td align='center'><a href=\"javascript:supr('".$ser['IDPeli']."','".$ser['nombre']."') \" class='btn-sm btn-outline-danger' /><i class='fa fa-trash-o' ></i></td>";
+
+          echo"</tr>";
+          $s++;
+        }
+    }
+  }
+  
+?>   
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+					</div>
+                </div>
+            </div><!-- .animated -->
+        
+
+     </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/jquery-3.4.1.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+ 
+  <!-- Chart JS -->
+  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
+  <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../assets/demo/demo.js"></script>
+<!--Tabla platilla2 !-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+    <script src="../assets2/js/main.js"></script>
+
+
+    <script src="../assets2/js/lib/data-table/datatables.min.js"></script>
+    <script src="../assets2/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+    <script src="../assets2/js/lib/data-table/dataTables.buttons.min.js"></script>
+    <script src="../assets2/js/lib/data-table/buttons.bootstrap.min.js"></script>
+    <script src="../assets2/js/lib/data-table/jszip.min.js"></script>
+    <script src="../assets2/js/lib/data-table/vfs_fonts.js"></script>
+    <script src="../assets2/js/lib/data-table/buttons.html5.min.js"></script>
+    <script src="../assets2/js/lib/data-table/buttons.print.min.js"></script>
+    <script src="../assets2/js/lib/data-table/buttons.colVis.min.js"></script>
+    <script src="../assets2/js/init/datatables-init.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+          $('#bootstrap-data-table-export').DataTable();
+      } );
+  </script>
+
+</body>
+
+</html>
+</script>
+<?php
+require "actualizarp.php";
+require "borrarp.php";
+
+?>
+<script type="text/javascript">
+  function edita2(id,tit,dur,clas,form,sd,disw){
+  
+    $('#id2').val(id);
+    $('#titulopeli1').val(tit);
+    $('#duracion1').val(dur);
+    $("#dubsub1").val(sd);
+    $('#clasifi1').val(clas); 
+    $("#distro1").val(disw);
+    //$("#as1").val(dis);
+    //$("#as2").val(sd);
+
+    var yo=form;  
+    if(yo =='2D/3D'){
+      $('#3d1').prop('checked', true);
+      $('#2d1').prop('checked', true);
+      
+    }
+      if(yo =='2D'){
+        $('#2d1').prop('checked', true);
+        $('#3d1').prop('checked', false);
+      }
+      if(yo =='3D')   {
+        $('#3d1').prop('checked', true);
+        $('#2d1').prop('checked', false);
+      }     
+    
+    $('#largeModal1').modal('show');
+    //$('#as').val(dis);
+    //$('#as2').val(sd);
+
+    
+  }
+
+  function supr(id,nom){
+    
+    $('#id3').val(id);
+    $('#nom3').val(nom);
+    $('#staticModal1').modal('show');
+    
+  }
+
+
+</script>
